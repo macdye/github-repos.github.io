@@ -22,11 +22,14 @@ const ducks = ["Audrey", "Bob", "Coco"]
 ducks.forEach((duck) => { console.log(duck) });
 
 
-const url = "https://api.github.com/users/joz84/repos";
+// const url = "https://api.github.com/users/joz84/repos";
+const url = "https://raw.githubusercontent.com/Joz84/github-repos.github.io/master/data.json"
 
 Highcharts.getJSON(url,
   function (data) {
-    console.dir(data)
+    const firstFormatedData = sizeByDate(data) 
+    firstFormatedData.forEach((firstFormatedData) => { console.log(firstFormatedData) }
+    );
 
     // Step 1: obtenir un tableau "firstFormatedData" qui regroupe les infos de date de création et de taille du code de chaque repo. Il doit avoir la forme suivante :
     // const firstFormatedData = [
